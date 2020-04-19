@@ -1,0 +1,31 @@
+#1)Step 1
+#make a folder where the blockchain data will be stored
+mkdir -p /home/bytales/VPS_Crypto/XTNC_BlockchainData
+
+#2)Step 2
+#go to folder
+cd /home/bytales/VPS_Crypto
+#and
+git clone https://github.com/AncientHodler/XTNC_SD
+
+#3)Step 3
+#Go to XTNC_SD folder and run the following command to build the container locally
+docker build -t xtnc_sd -f Dockerfile .
+
+#4)Step 4
+Create the container like this
+
+sudo docker run -d -p 33123:33123 -p 33124:33124 -p 33125:33125 -v /home/bytales/VPS_Crypto/XTNC_BlockchainData:/XtendCash/SN_Data --name xtnc xtnc_sd
+
+#5)Additional Information
+#This is the command with which the first container is being launched
+/XtendCash/xtendcashd --data-dir /XtendCash/SN_Data --confirm-external-bind --non-interactive --add-peer 51.68.191.40
+#standard ports of the running demon are
+#--p2p-bind-port=33123 --zmq-rpc-bind-port=33124 --rpc-bind-port=33125
+
+
+
+
+
+
+
