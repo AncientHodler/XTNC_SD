@@ -9,7 +9,10 @@ cd /home/bytales/VPS_Crypto
 git clone https://github.com/AncientHodler/XTNC_SD
 
 #3)Step 3
-#Go to XTNC_SD folder and run the following command to build the container locally
+#Go to XTNC_SD folder and run the following command to build the container locally:
+#On the 32 Core Server, use the Docker.Prime file. This uses Huser Pool
+docker build -t xtnc_sd -f Dockerfile.Prime .
+#On all other Computers, use the standard Docker file. This uses both Huser pool and 32 core Server as peers.
 docker build -t xtnc_sd -f Dockerfile .
 
 #4)Step 4

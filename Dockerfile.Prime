@@ -12,4 +12,4 @@ ADD xtendcashd /XtendCash
 #ADD p2pstate.bin /XtendCash
 ADD NodeConfig_SD.sh /XtendCash
 
-ENTRYPOINT ["/XtendCash/NodeConfig_SD_Secondary.sh"]
+ENTRYPOINT ["/XtendCash/NodeConfig_SD_Prime.sh"]
